@@ -49,9 +49,9 @@ export function sizeToBytes(size: string): number;
 export function namespaceByPath(namespace: object, path: string): object | null;
 
 type Every = {
-  YY: number;
-  MM: number;
   DD: number;
+  MM: number;
+  YY: number;
   wd: number;
   dd: number;
   hh: number;
