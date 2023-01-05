@@ -430,7 +430,7 @@ metatests.case(
         5000,
       ],
       [
-        //{ YY: 2021, MM: 8, DD: 1, wd: -1, hh: -1, mm: -1, ms: 5000 },
+        //{ YY: 2021, MM: 8, DD: 1, wd: -1, hh: -1, mm: -1, ms: 5000 }, тест
         { DD: 1, MM: 8, YY: 2021, wd: -1, hh: -1, mm: -1, ms: 5000 },
         new Date('Tue, 20 Jul 2021 12:00:00 GMT'),
         0,
