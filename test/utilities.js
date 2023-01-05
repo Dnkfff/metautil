@@ -279,7 +279,13 @@ metatests.case(
       ['Abc', -1],
     ],
     'metautil.parseEvery': [
-      ['', { DD: -1, MM: -1, YY: -1, wd: -1, hh: -1, mm: -1, ms: -1 }], // логувати норм помилку || ['', { DD: console.error(undefined), MM: console.error(undefined), YY: console.error(undefined), wd: console.error(undefined), hh: console.error(undefined), mm: console.error(undefined), ms: console.error(undefined) }], // зробити логування помилки коли дані не введені
+      ['', { DD: -1, MM: -1, YY: -1, wd: -1, hh: -1, mm: -1, ms: -1 }], 
+      /* логувати норм помилку || 
+      ['', { DD: console.error(undefined), MM: console.error(undefined), 
+        YY: console.error(undefined), wd: console.error(undefined), hh: 
+        console.error(undefined), mm: console.error(undefined), 
+        ms: console.error(undefined) }], // зробити логування помилки коли дані не введені
+      */
       ['3s', { DD: -1, MM: -1, YY: -1, wd: -1, hh: -1, mm: -1, ms: 3000 }],
       [':30', { DD: -1, MM: -1, YY: -1, wd: -1, hh: -1, mm: 30, ms: -1 }],
       ['17:', { DD: -1, MM: -1, YY: -1, wd: -1, hh: 17, mm: 0, ms: -1 }],
@@ -301,74 +307,65 @@ metatests.case(
       ['2022 Fri', { DD: -1, MM: -1, YY: 2022, wd: 5, hh: -1, mm: -1, ms: -1 }],
       ['2022 5th', { DD: 5, MM: -1, YY: 2022, wd: -1, hh: -1, mm: -1, ms: -1 }],
       ['2022 Fri', { DD: -1, MM: -1, YY: 2022, wd: 5, hh: -1, mm: -1, ms: -1 }],
-
-      //['', { YY: -1, MM: -1, DD: -1, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      //['3s', { YY: -1, MM: -1, DD: -1, wd: -1, hh: -1, mm: -1, ms: 3000 }],
-      //[':30', { YY: -1, MM: -1, DD: -1, wd: -1, hh: -1, mm: 30, ms: -1 }],
-      //['17:', { YY: -1, MM: -1, DD: -1, wd: -1, hh: 17, mm: 0, ms: -1 }],
-      //['Apr', { YY: -1, MM: 4, DD: -1, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      //['5th', { YY: -1, MM: -1, DD: 5, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      //['Sun', { YY: -1, MM: -1, DD: -1, wd: 1, hh: -1, mm: -1, ms: -1 }],
-      //['2022', { YY: 2022, MM: -1, DD: -1, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      //['Apr 3s', { YY: -1, MM: 4, DD: -1, wd: -1, hh: -1, mm: -1, ms: 3000 }],
-      //['5th 3s', { YY: -1, MM: -1, DD: 5, wd: -1, hh: -1, mm: -1, ms: 3000 }],
-      //['Sun 3s', { YY: -1, MM: -1, DD: -1, wd: 1, hh: -1, mm: -1, ms: 3000 }],
-    //['17:30', { YY: -1, MM: -1, DD: -1, wd: -1, hh: 17, mm: 30, ms: -1 }],
-      //['1st :30', { YY: -1, MM: -1, DD: 1, wd: -1, hh: -1, mm: 30, ms: -1 }],
-      //['2nd 17:', { YY: -1, MM: -1, DD: 2, wd: -1, hh: 17, mm: 0, ms: -1 }],
-      //['Sun 4th', { YY: -1, MM: -1, DD: 4, wd: 1, hh: -1, mm: -1, ms: -1 }],
-      //['Apr 3rd', { YY: -1, MM: 4, DD: 3, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      //['10th Apr', { YY: -1, MM: 4, DD: 10, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      //['2022 Apr', { YY: 2022, MM: 4, DD: -1, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      //['2022 5th', { YY: 2022, MM: -1, DD: 5, wd: -1, hh: -1, mm: -1, ms: -1 }],
-      // ['2022 Fri', { YY: 2022, MM: -1, DD: -1, wd: 6, hh: -1, mm: -1, ms: -1 }],
       [
         '2022 Aug Fri',
-        { YY: 2022, MM: 8, DD: -1, wd: 6, hh: -1, mm: -1, ms: -1 },
+        { DD: -1, MM: 8, YY: 2022, wd: 5, hh: -1, mm: -1, ms: -1 },
+      //  { YY: 2022, MM: 8, DD: -1, wd: 6, hh: -1, mm: -1, ms: -1 },
       ],
       [
         '2022 Aug 5th',
-        { YY: 2022, MM: 8, DD: 5, wd: -1, hh: -1, mm: -1, ms: -1 },
+        { DD: 5, MM: 8, YY: 2022, wd: -1, hh: -1, mm: -1, ms: -1 },
+        //{ YY: 2022, MM: 8, DD: 5, wd: -1, hh: -1, mm: -1, ms: -1 },
       ],
       [
         '2022 Aug Fri 21:',
-        { YY: 2022, MM: 8, DD: -1, wd: 6, hh: 21, mm: 0, ms: -1 },
+        { DD: 21, MM: 8, YY: 2022, wd: 5, hh: 21, mm: 0, ms: -1 },
+        //{ YY: 2022, MM: 8, DD: -1, wd: 6, hh: 21, mm: 0, ms: -1 },
       ],
       [
         '2022 Aug Fri :60',
-        { YY: 2022, MM: 8, DD: -1, wd: 6, hh: -1, mm: 60, ms: -1 },
+        { DD: -1, MM: 8, YY: 2022, wd: 5, hh: -1, mm: 60, ms: -1 },
+        //{ YY: 2022, MM: 8, DD: -1, wd: 6, hh: -1, mm: 60, ms: -1 },
       ],
       [
         '2022 15th 01:30 25s',
-        { YY: 2022, MM: -1, DD: 15, wd: -1, hh: 1, mm: 30, ms: 25000 },
+        { DD: 15, MM: -1, YY: 2022, wd: -1, hh: 1, mm: 30, ms: 25000 },
+        //{ YY: 2022, MM: -1, DD: 15, wd: -1, hh: 1, mm: 30, ms: 25000 },
       ],
       [
         '5th Fri 01:30 5s',
-        { YY: -1, MM: -1, DD: 5, wd: 6, hh: 1, mm: 30, ms: 5000 },
+        { DD: 5, MM: -1, YY: 2022, wd: 5, hh: 1, mm: 30, ms: 5000 },
+        //{ YY: -1, MM: -1, DD: 5, wd: 6, hh: 1, mm: 30, ms: 5000 },
       ],
       [
         'Aug 1th Fri 01:30 5s',
-        { YY: -1, MM: 8, DD: 1, wd: 6, hh: 1, mm: 30, ms: 5000 },
+        { DD: 1, MM: 8, YY: 2022, wd: 5, hh: 11, mm: 30, ms: 5000 },
+        //{ YY: -1, MM: 8, DD: 1, wd: 6, hh: 1, mm: 30, ms: 5000 },
       ],
       [
         '2022 Aug 5th Fri',
-        { YY: 2022, MM: 8, DD: 5, wd: 6, hh: -1, mm: -1, ms: -1 },
+        { DD: 5, MM: 8, YY: 2022, wd: 5, hh: -1, mm: -1, ms: -1 },
+        //{ YY: 2022, MM: 8, DD: 5, wd: 6, hh: -1, mm: -1, ms: -1 },
       ],
       [
         '2022 Aug 5th Fri 23:',
-        { YY: 2022, MM: 8, DD: 5, wd: 6, hh: 23, mm: 0, ms: -1 },
+        { DD: 5, MM: 8, YY: 2022, wd: 5, hh: 23, mm: 0, ms: -1 },
+        //{ YY: 2022, MM: 8, DD: 5, wd: 6, hh: 23, mm: 0, ms: -1 },
       ],
       [
         '2022 Aug 5th Fri :30',
-        { YY: 2022, MM: 8, DD: 5, wd: 6, hh: -1, mm: 30, ms: -1 },
+        { DD: 5, MM: 8, YY: 2022, wd: 5, hh: -1, mm: 30, ms: -1 },
+        //{ YY: 2022, MM: 8, DD: 5, wd: 6, hh: -1, mm: 30, ms: -1 },
       ],
       [
         '2022 Aug 5th Fri 23:30',
-        { YY: 2022, MM: 8, DD: 5, wd: 6, hh: 23, mm: 30, ms: -1 },
+        { DD: 5, MM: 8, YY: 2022, wd: 5, hh: 23, mm: 30, ms: -1 },
+        //{ YY: 2022, MM: 8, DD: 5, wd: 6, hh: 23, mm: 30, ms: -1 },
       ],
       [
         '2022 Aug 5th Fri 23:30 15s',
-        { YY: 2022, MM: 8, DD: 5, wd: 6, hh: 23, mm: 30, ms: 15000 },
+        { DD: 5, MM: 8, YY: 2022, wd: 5, hh: 23, mm: 30, ms: 15000 },
+        //{ YY: 2022, MM: 8, DD: 5, wd: 6, hh: 23, mm: 30, ms: 15000 },
       ],
     ],
     'metautil.nextEvent': [
