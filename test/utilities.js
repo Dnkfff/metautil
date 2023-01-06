@@ -280,12 +280,6 @@ metatests.case(
     ],
     'metautil.parseEvery': [
       ['', { DD: -1, MM: -1, YY: -1, wd: -1, hh: -1, mm: -1, ms: -1 }], 
-      /* логувати норм помилку || 
-      ['', { DD: console.error(undefined), MM: console.error(undefined), 
-        YY: console.error(undefined), wd: console.error(undefined), hh: 
-        console.error(undefined), mm: console.error(undefined), 
-        ms: console.error(undefined) }], // зробити логування помилки коли дані не введені
-      */
       ['3s', { DD: -1, MM: -1, YY: -1, wd: -1, hh: -1, mm: -1, ms: 3000 }],
       [':30', { DD: -1, MM: -1, YY: -1, wd: -1, hh: -1, mm: 30, ms: -1 }],
       ['17:', { DD: -1, MM: -1, YY: -1, wd: -1, hh: 17, mm: 0, ms: -1 }],
@@ -467,6 +461,10 @@ metatests.case(
       ],
     ],
     'metautil.nowDateTimeUTC': [
+      /*
+      let data = new Date('05/04/2021 14:52');
+      console.log(data.toLocaleString('en-GB',{hour12: false}));
+      */
       [undefined, (s) => s.length === 'YYYY-MM-DDThh:mm:ss'.length],
       [new Date('2021-10-15T20:54:18.713Z'), '2021-10-15T20:54:18'],
       [new Date('2020-12-01T01:15:30+03:00'), '2020-11-30T22:15:30'],
